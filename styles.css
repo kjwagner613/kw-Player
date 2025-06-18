@@ -10,7 +10,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+ border: 13px solid rgb(237, 181, 225);
 }
+.song-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+  max-width: 400px;
+  grid-gap: 2px;
+}
+
 
 .player-container {
   width: 90vw;
@@ -23,7 +32,7 @@ body {
   position: relative;
   margin-top: 55px;
   margin-bottom: 55px;
-  border: 3px solid black;
+  border: 3px solid rgb(237, 181, 225);
 }
 
 .player-image {
@@ -84,6 +93,8 @@ button {
   font-weight: bold;
   border-color: #f70084;
   margin-top: 10px;
+  width: 75vw;
+  max-width: 300px;
 }
 
 .fancy-script {
