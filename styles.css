@@ -13,7 +13,9 @@ body {
   align-items: center;
   justify-content: center;
   border: 13px solid rgb(237, 181, 225);
+  overflow-y: hidden;
 }
+
 .song-list-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
