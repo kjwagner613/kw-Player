@@ -56,6 +56,13 @@ document.addEventListener("DOMContentLoaded", () => {
     playNextSong();
   });
 
+  audioPlayer.addEventListener("play", () => {
+    updateStatus("Playing", songs[currentSongIndex].name);
+  });
+  audioPlayer.addEventListener("pause", () => {
+    updateStatus("Paused", songs[currentSongIndex].name);
+  });
+
   function playNextSong() {
     let nextIndex = currentSongIndex;
     let found = false;
