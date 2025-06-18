@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=.5, user-scalable=yes" />
+  <title>♥jS♥ music ♥Sj♥</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+</head>
+
+<body>
+
+  <div class="player-container">
+    <div class="lcd-display" id="lcdDisplay">
+      <span id="status">Paused</span><br />
+      <span id="current-song">No song playing</span>
+    </div>
+    <img src="assets/newPlayerHead.png" usemap="#image-map" />
+    <map name="image-map">
+      <area alt="Previous" title="Previous" coords="135,677,63" shape="circle" data-action="prev" />
+      <area alt="Play" title="Play" coords="281,674,72" shape="circle" data-action="play" />
+      <area alt="Pause" title="Pause" coords="425,676,66" shape="circle" data-action="pause" />
+      <area alt="Next" title="Next" coords="572,673,68" shape="circle" data-action="next" />
+      <area alt="Song-List" title="Song-List" coords="217,892,496,1027" shape="rect" data-action="songlist" />
+      <area alt="Medallion" title="Medallion" coords="357,1296,198" shape="circle" data-action="medallion" />
+    </map>
+    <div class="status-display">
+      <span id="status">Paused</span><br />
+      <span id="current-song">No song playing</span>
+    </div>
+    <audio id="audioPlayer" controls></audio>
+    <script src="songs.js"></script>
+    <script src="script.js"></script>
+
+
+  </div>
+</body>
+
+</html>

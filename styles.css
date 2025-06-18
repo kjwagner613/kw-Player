@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+@import url("https://fonts.cdnfonts.com/css/digital-7");
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(242, 135, 219);
+  margin: 0;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-container {
+  width: 90vw;
+  max-width: 700px;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  position: relative;
+  margin-top: 55px;
+  margin-bottom: 55px;
+  border: 3px solid black;
+}
+
+.player-image {
+  width: 100%;
+  display: block;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 4px 16px #ed126d;
+}
+
+.lcd-display {
+  position: absolute;
+  top: 19%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 10%;
+  background: #222;
+  color: rgb(255, 0, 200);
+  font-family: 'Digital-7', monospace, Arial, sans-serif;
+  font-size: 2em;
+  border-radius: 8px;
+  border: 2px solid rgb(255, 0, 200);
+  text-align: center;
+  box-shadow: 0 0 10px rgb(255, 0, 200);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0.3em 0;
+  margin-bottom: 0.5em;
+}
+
+.status-display {
+  font-size: 0.7em;
+  color: #0f0;
+}
+
+#audioPlayer {
+  position: absolute;
+  top: 45%;
+  left: 50.5%;
+  transform: translateX(-50%);
+  height: 5%;
+  width: 85%;  
+  border-radius: 8px;
+  background: #fff;
+  border: 2px solid rgb(255, 0, 200);
+  box-shadow: 0 2px 8px rgb(255, 0, 200);
+  pointer-events: auto;
+}
+
+button {
+  background-color: #ef0ed4;
+  border: solid;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 22px;
+  color: white;
+  font-weight: bold;
+  border-color: #f70084;
+  margin-top: 10px;
+}
+
+.fancy-script {
+  font-family: "Great Vibes", cursive;
+  font-size: 7vh;
+  color: #dfe7ef;
+  text-shadow: 1px 1px 2px rgb(17, 16, 16), 0 0 1em rgb(24, 24, 25), 0 0 0.2em rgb(17, 17, 19);
+  margin-top: 1em;
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .lcd-display { font-size: 1.2em; }
+  .player-container { min-width: 0; }
+}

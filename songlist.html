@@ -1,0 +1,59 @@
+<!-- try this -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Song List</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="song-list-container">
+    <h1>Song List</h1>
+    <ul id="song-list">
+      <!-- Song items will be dynamically added here -->
+    </ul>
+  </div>
+
+  <script src="songs.js"></script>
+  <script>
+    const songList = document.getElementById("song-list");
+
+    songs.forEach((song, index) => {
+      const li = document.createElement("li");
+
+      // Song select button
+      const button = document.createElement("button");
+      button.textContent = `${song.name} - ${song.artist || ""}`;
+      button.addEventListener("click", () => {
+        localStorage.setItem("selectedSongIndex", index);
+        window.location.href = "index.html";
+      });
+
+      // Play/skip checkbox
+      const label = document.createElement("label");
+      label.style.marginLeft = "1em";
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.checked = song.play;
+      checkbox.addEventListener("change", (e) => {
+        song.play = e.target.checked;
+        // Save all play states to localStorage
+        const playStates = songs.map(s => s.play);
+        localStorage.setItem("songPlayStates", JSON.stringify(playStates));
+      });
+      label.appendChild(checkbox); // <-- Add this line!
+      li.appendChild(button);
+      li.appendChild(label);
+      songList.appendChild(li);
+
+      li.appendChild(button);
+      li.appendChild(label);
+      songList.appendChild(li);
+    });
+  </script>
+</body>
+
+</html>

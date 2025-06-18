@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>♥jS♥ music ♥Sj♥</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+  <div class="player-container">
+    <img src="assets/layeredSjPlayer.png" usemap="#image-map">
+    <map name="image-map">
+      <area shape="rect" coords="109,466,217,568" data-action="prev" alt="Previous">
+      <area shape="rect" coords="260,469,377,571" data-action="play" alt="Play">
+      <area shape="rect" coords="419,464,526,564" data-action="pause" alt="Pause">
+      <area shape="rect" coords="576,467,683,574" data-action="next" alt="Next">
+    </map>
+    <div class="status-display">
+      <span id="status">Paused</span><br />
+      <span id="current-song">No song playing</span>
+    </div>
+    <audio id="audioPlayer" controls></audio>
+  <script src="songs.js"></script>
+  <script src="script.js"></script>
+      <button class="song-list-button" onclick="window.location.href='songlist.html'">Song List</button>
+       <ul id="playlist"></ul></div>
+      </body>
+</html>
+
+
