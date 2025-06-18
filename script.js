@@ -38,13 +38,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  function playSong(index) {
+  function playSong(index, autoPlay = true) {
     audioPlayer.src = songs[index].file;
-    audioPlayer.play().catch((error) => {
-      console.error("Error playing song:", error);
-    });
+    if (autoPlay) {
+      audioPlayer.play().catch((error) => {
+        console.error("Error playing song:", error);
+      });
+      updateStatus("Playing", songs[index].name);
+    } else {
+      audioPlayer.load();
+      updateStatus("Paused", songs[index].name);
+    }
     currentSongIndex = index;
-    updateStatus("Playing", songs[index].name);
   }
 
   function updateStatus(status, songName) {
