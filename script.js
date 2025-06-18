@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const audioPlayer = document.getElementById("audioPlayer");
   const statusDisplay = document.getElementById("status");
+  statusDisplay.textContent = "Paused";
   const currentSongDisplay = document.getElementById("current-song");
   const playerContainer = document.querySelector(".player-container");
 
