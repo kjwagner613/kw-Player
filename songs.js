@@ -104,6 +104,7 @@ const songs = [
   },
   {
     name: "Free to wear sunscreen",
+    artist: "Baz Luhrman",
     file: "https://dl.dropboxusercontent.com/scl/fi/k5anr05xp6hqmiltvmejc/01-Everybody-s-Free-To-Wear-Sunscreen-Edit.mp3?rlkey=1r8dma9sm32jbm6qj6ao2hqhy&st=6gyim8to&dl=0",
     play: true,
   },
