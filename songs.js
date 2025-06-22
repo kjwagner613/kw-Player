@@ -98,7 +98,7 @@ const songs = [
   },
   {
     name: "Somewhere Over the Rainbow",
-    artist: "Israel Kamakawiwoʻole:,
+    artist: "Israel Kamakawiwoʻole",
     file: "https://dl.dropboxusercontent.com/scl/fi/lc7lvxpna6lgd0e5vij8d/Over-the-Rainbow-BrotherIs.mp3?rlkey=w6fhadp0amlkfgklqom2oqwjc&st=p0ryij8l&dl=0",
     play: true,
   },
