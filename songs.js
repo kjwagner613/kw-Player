@@ -1,5 +1,17 @@
-//updated 6/17/2025
+//updated 6/26/2025
 const songs = [
+  {
+    name: "Ignite",
+    artist: "Alan Walker",
+    file: "https://dl.dropboxusercontent.com/scl/fi/i41uob6bqj811vrgn3dlw/10.-Ignite.mp3?rlkey=dhvdsqvqd87eshf41o20gn97v&st=llnc3ngc&dl=0",
+    play: true,
+  },
+  {
+    name: "Legends Never Die",
+    artist: "Alan Walker",
+    file: "https://dl.dropboxusercontent.com/scl/fi/pzn44dxy4j2itlitzddgt/13.-Legends-Never-Die.mp3?rlkey=f239d9867lupk8g4dh23n63ob&st=aiihb0z9&dl=0",
+    play: true,
+  },
   {
     name: "Green Eyes",
     artist: "Coldplay",
