@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Hide SoundCloud widget, show audio player
     document.getElementById('soundcloud-container').style.display = 'none';
-    document.getElementById('audioPlayer').style.display = 'block';
+    document.getElementById('audioPlayer').style.display = 'none';
 
     // Find first playable song in playlist
     let firstPlayableIndex = 0;
