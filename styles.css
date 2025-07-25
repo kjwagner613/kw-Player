@@ -24,7 +24,6 @@ body {
   grid-gap: 2px;
 }
 
-
 .player-container {
   width: 90vw;
   max-width: 700px;
@@ -48,14 +47,14 @@ body {
 
 .lcd-display {
   position: absolute;
-  top: 22%;
+  top: 20%;
   left: 50%;
   transform: translateX(-50%);
   width: 70%;
-  height: 10%;
+  height: 15%;
   background: #222;
   color: rgb(255, 0, 200);
-  font-family: 'Digital-7', monospace, Arial, sans-serif;
+  font-family: "Digital-7", monospace, Arial, sans-serif;
   font-size: 2em;
   border-radius: 8px;
   border: 2px solid rgb(255, 0, 200);
@@ -74,12 +73,13 @@ body {
 }
 
 #audioPlayer {
+  display: none;
   position: absolute;
   top: 50%;
   left: 50.5%;
   transform: translateX(-50%);
   height: 5%;
-  width: 85%;  
+  width: 85%;
   border-radius: 8px;
   background: #fff;
   border: 2px solid rgb(255, 0, 200);
@@ -105,12 +105,64 @@ button {
   font-family: "Great Vibes", cursive;
   font-size: 7vh;
   color: #dfe7ef;
-  text-shadow: 1px 1px 2px rgb(17, 16, 16), 0 0 1em rgb(24, 24, 25), 0 0 0.2em rgb(17, 17, 19);
+  text-shadow: 1px 1px 2px rgb(17, 16, 16), 0 0 1em rgb(24, 24, 25),
+    0 0 0.2em rgb(17, 17, 19);
   margin-top: 1em;
   text-align: center;
 }
 
+/* Playlist selector styling */
+#playlist-selector {
+  background: #333;
+  color: rgb(255, 0, 200);
+  border: 1px solid rgb(255, 0, 200);
+  border-radius: 4px;
+  padding: 5px;
+  font-family: "Digital-7", monospace, Arial, sans-serif;
+  font-size: 0.8em;
+  width: 100%;
+  margin-top: 5px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+#playlist-selector option {
+  background: #333;
+  color: rgb(255, 0, 200);
+  padding: 5px;
+  text-align: center;
+}
+
+#playlist-selector:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgb(255, 0, 200);
+}
+
+/* SoundCloud container styling */
+#soundcloud-container {
+  position: absolute;
+  top: 96%;
+  left: 0%;
+
+  width: 85%;
+  height: 16px;
+  border-radius: 8px;
+  border: 2px solid rgb(255, 0, 200);
+  box-shadow: 0 2px 8px rgb(255, 0, 200);
+  transform: scale(0.5);
+  overflow: hidden;
+}
+
+#soundcloud-widget {
+  border-radius: 6px;
+}
+
 @media (max-width: 500px) {
-  .lcd-display { font-size: 1.2em; }
-  .player-container { min-width: 0; }
+  .lcd-display {
+    font-size: 1.2em;
+  }
+  .player-container {
+    min-width: 0;
+  }
 }

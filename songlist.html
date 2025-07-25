@@ -11,48 +11,108 @@
 
 <body>
   <div class="song-list-container">
-
+    <h2 id="playlist-title">Song List</h2>
+    <div id="playlist-selector-container">
+      <label for="playlist-selector">Select Playlist: </label>
+      <select id="playlist-selector">
+        <option value="songs">Joanne's Local</option>
+        <option value="songsKw">Kevin's Local</option>
+        <option value="joanneCloud">Joanne's SoundCloud</option>
+        <option value="kevinCloud">Kevin's SoundCloud</option>
+      </select>
+    </div>
     <ul id="song-list">
       <!-- Song items will be dynamically added here -->
     </ul>
   </div>
 
   <script src="songs.js"></script>
+  <script src="songs-ks.js"></script>
   <script>
     const songList = document.getElementById("song-list");
+    const playlistSelector = document.getElementById("playlist-selector");
+    const playlistTitle = document.getElementById("playlist-title");
 
-    songs.forEach((song, index) => {
-      const li = document.createElement("li");
+    const playlists = {
+      songs: songs,
+      songsKw: songsKw,
+      joanneCloud: [], // SoundCloud playlists show message
+      kevinCloud: []   // SoundCloud playlists show message
+    };
 
-      // Song select button
-      const button = document.createElement("button");
-      button.textContent = `${song.name} - ${song.artist || ""}`;
-      button.addEventListener("click", () => {
-        localStorage.setItem("selectedSongIndex", index);
-        window.location.href = "index.html";
+    const playlistNames = {
+      songs: "Joanne's Local",
+      songsKw: "Kevin's Local",
+      joanneCloud: "Joanne's SoundCloud",
+      kevinCloud: "Kevin's SoundCloud"
+    };
+
+    let currentPlaylistKey = localStorage.getItem("currentPlaylistKey") || "songs";
+    let currentPlaylist = playlists[currentPlaylistKey];
+
+    // Set the selector to the current playlist
+    playlistSelector.value = currentPlaylistKey;
+
+    function renderSongList() {
+      songList.innerHTML = ""; // Clear existing list
+      playlistTitle.textContent = playlistNames[currentPlaylistKey];
+
+      // Handle SoundCloud playlists
+      if (currentPlaylistKey === 'joanneCloud' || currentPlaylistKey === 'kevinCloud') {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <p style="text-align: center; padding: 20px; color: #666;">
+            <strong>${playlistNames[currentPlaylistKey]}</strong><br>
+            SoundCloud playlists are managed directly on the main player.<br>
+            <a href="index.html" style="color: #ff5500;">← Back to Player</a>
+          </p>
+        `;
+        songList.appendChild(li);
+        return;
+      }
+
+      // Handle local playlists
+      currentPlaylist.forEach((song, index) => {
+        const li = document.createElement("li");
+
+        // Song select button
+        const button = document.createElement("button");
+        button.textContent = `${song.name} - ${song.artist || ""}`;
+        button.addEventListener("click", () => {
+          localStorage.setItem("selectedSongIndex", index);
+          localStorage.setItem("selectedPlaylistKey", currentPlaylistKey);
+          window.location.href = "index.html";
+        });
+
+        // Play/skip checkbox
+        const label = document.createElement("label");
+        label.style.marginLeft = "1em";
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = song.play;
+        checkbox.addEventListener("change", (e) => {
+          song.play = e.target.checked;
+          // Save all play states to localStorage for the current playlist
+          const playStates = currentPlaylist.map(s => s.play);
+          localStorage.setItem(`${currentPlaylistKey}PlayStates`, JSON.stringify(playStates));
+        });
+
+        label.appendChild(checkbox);
+        li.appendChild(button);
+        li.appendChild(label);
+        songList.appendChild(li);
       });
+    }
 
-      // Play/skip checkbox
-      const label = document.createElement("label");
-      label.style.marginLeft = "1em";
-      const checkbox = document.createElement("input");
-      checkbox.type = "checkbox";
-      checkbox.checked = song.play;
-      checkbox.addEventListener("change", (e) => {
-        song.play = e.target.checked;
-        // Save all play states to localStorage
-        const playStates = songs.map(s => s.play);
-        localStorage.setItem("songPlayStates", JSON.stringify(playStates));
-      });
-      label.appendChild(checkbox); // <-- Add this line!
-      li.appendChild(button);
-      li.appendChild(label);
-      songList.appendChild(li);
-
-      li.appendChild(button);
-      li.appendChild(label);
-      songList.appendChild(li);
+    // Handle playlist selection change
+    playlistSelector.addEventListener('change', function () {
+      currentPlaylistKey = this.value;
+      currentPlaylist = playlists[currentPlaylistKey];
+      renderSongList();
     });
+
+    // Initial render
+    renderSongList();
   </script>
 </body>
 
