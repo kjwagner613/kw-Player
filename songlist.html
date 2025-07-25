@@ -12,15 +12,6 @@
 <body>
   <div class="song-list-container">
     <h2 id="playlist-title">Song List</h2>
-    <div id="playlist-selector-container">
-      <label for="playlist-selector">Select Playlist: </label>
-      <select id="playlist-selector">
-        <option value="songs">Joanne's Local</option>
-        <option value="songsKw">Kevin's Local</option>
-        <option value="joanneCloud">Joanne's SoundCloud</option>
-        <option value="kevinCloud">Kevin's SoundCloud</option>
-      </select>
-    </div>
     <ul id="song-list">
       <!-- Song items will be dynamically added here -->
     </ul>
@@ -30,7 +21,6 @@
   <script src="songs-ks.js"></script>
   <script>
     const songList = document.getElementById("song-list");
-    const playlistSelector = document.getElementById("playlist-selector");
     const playlistTitle = document.getElementById("playlist-title");
 
     const playlists = {
@@ -47,11 +37,9 @@
       kevinCloud: "Kevin's SoundCloud"
     };
 
+    // Get current playlist from localStorage (set by main player)
     let currentPlaylistKey = localStorage.getItem("currentPlaylistKey") || "songs";
     let currentPlaylist = playlists[currentPlaylistKey];
-
-    // Set the selector to the current playlist
-    playlistSelector.value = currentPlaylistKey;
 
     function renderSongList() {
       songList.innerHTML = ""; // Clear existing list
@@ -103,13 +91,6 @@
         songList.appendChild(li);
       });
     }
-
-    // Handle playlist selection change
-    playlistSelector.addEventListener('change', function () {
-      currentPlaylistKey = this.value;
-      currentPlaylist = playlists[currentPlaylistKey];
-      renderSongList();
-    });
 
     // Initial render
     renderSongList();
