@@ -11,7 +11,10 @@
 
 <body>
   <div class="song-list-container">
-    <h2 id="playlist-title">Song List</h2>
+    <div class="titles-container">
+      <h2 id="playlist-title">Song List</h2>
+      <h3 id="current-playlist-name" style="text-align: center; margin: 10px 0; color: rgb(255, 0, 200);"></h3>
+    </div>
     <ul id="song-list">
       <!-- Song items will be dynamically added here -->
     </ul>
@@ -22,6 +25,7 @@
   <script>
     const songList = document.getElementById("song-list");
     const playlistTitle = document.getElementById("playlist-title");
+    const currentPlaylistName = document.getElementById("current-playlist-name");
 
     const playlists = {
       songs: songs,
@@ -43,14 +47,14 @@
 
     function renderSongList() {
       songList.innerHTML = ""; // Clear existing list
-      playlistTitle.textContent = playlistNames[currentPlaylistKey];
+      playlistTitle.textContent = "Song List";
+      currentPlaylistName.textContent = playlistNames[currentPlaylistKey];
 
       // Handle SoundCloud playlists
       if (currentPlaylistKey === 'joanneCloud' || currentPlaylistKey === 'kevinCloud') {
         const li = document.createElement("li");
         li.innerHTML = `
           <p style="text-align: center; padding: 20px; color: #666;">
-            <strong>${playlistNames[currentPlaylistKey]}</strong><br>
             SoundCloud playlists are managed directly on the main player.<br>
             <a href="index.html" style="color: #ff5500;">← Back to Player</a>
           </p>
