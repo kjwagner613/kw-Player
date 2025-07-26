@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const playlistDisplay = document.getElementById("playlist");
 
   let currentSongIndex = 0;
-  let currentPlaylist = songs; // Default to Joanne's playlist
+  let currentPlaylist = songsKw; // Default to Kevin's playlist
   let currentPlaylistType = 'local'; // 'local' or 'soundcloud'
   let soundcloudWidget = null;
 
@@ -20,21 +20,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Playlist management - declare these first
   const playlists = {
-    songs: songs,           // Joanne's Local
     songsKw: songsKw,      // Kevin's Local
+    songs: songs,           // Joanne's Local
     joanneCloud: [],       // Will be populated from SoundCloud
     kevinCloud: []         // Will be populated from SoundCloud
   };
 
   const playlistNames = {
-    songs: "Joanne's Local",
     songsKw: "Kevin's Local",
+    songs: "Joanne's Local",
     joanneCloud: "Joanne's SoundCloud",
     kevinCloud: "Kevin's SoundCloud"
   };
 
   // Initialize playlist display
-  playlistDisplay.textContent = playlistNames.songs; // Set default to Joanne's
+  playlistDisplay.textContent = playlistNames.songsKw; // Set default to Kevin's
 
   // Debug: Check if playlist selector has all options
   setTimeout(() => {

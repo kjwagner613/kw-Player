@@ -28,21 +28,21 @@
     const currentPlaylistName = document.getElementById("current-playlist-name");
 
     const playlists = {
-      songs: songs,
       songsKw: songsKw,
+      songs: songs,
       joanneCloud: [], // SoundCloud playlists show message
       kevinCloud: []   // SoundCloud playlists show message
     };
 
     const playlistNames = {
-      songs: "Joanne's Local",
       songsKw: "Kevin's Local",
+      songs: "Joanne's Local",
       joanneCloud: "Joanne's SoundCloud",
       kevinCloud: "Kevin's SoundCloud"
     };
 
     // Get current playlist from localStorage (set by main player)
-    let currentPlaylistKey = localStorage.getItem("currentPlaylistKey") || "songs";
+    let currentPlaylistKey = localStorage.getItem("currentPlaylistKey") || "songsKw";
     let currentPlaylist = playlists[currentPlaylistKey];
 
     function renderSongList() {
