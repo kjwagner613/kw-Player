@@ -211,11 +211,10 @@ const songsKw = [
     file: "https://dl.dropboxusercontent.com/scl/fi/t4u4apobecxuwdd36pcbi/1-02-Sour-Times.mp3?rlkey=ugulhicj27pf1d70fw0qhxljg&st=kwlow8xi&dl=0",
     play: true,
   },
-
   {
     name: "Beloved Wife",
     artist: "Natalie Merchant",
-    file: "https://dl.dropboxusercontent.com/scl/fi/qhoop0uy5s4tl0nez0x8m/02-Beloved-Wife.mp3?rlkey=0y5bh8yvd71kn784dxtykiq84&st=okavdhjq&dl=0",
+    file: "https://dl.dropboxusercontent.com/scl/fi/wr7si14dc08ehur8hj0qw/03-Natalie-Merchant-Beloved-Wife.mp3?rlkey=g2isx2n4n8ii1w81rhw6cu5u8&st=vkdfiazj&dl=0",
     play: true,
   },
   {

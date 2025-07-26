@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
-@import url("./assets/Digital-7 Regular.ttf");
+
+@font-face {
+  font-family: "Digital-7";
+  src: url("./assets/Digital-7 Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
   font-family: Arial, sans-serif;
