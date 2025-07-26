@@ -2,6 +2,30 @@
 //Kevins Playlist
 const songsKw = [
   {
+    name: "Unbreakable",
+    artist: "Fireflight",
+    file: "https://dl.dropboxusercontent.com/scl/fi/kupg0tpkhh5fd18d1lg4d/Fireflight-Unbreakable.mp3?rlkey=21z75fsevnrculttytgde0kwf&st=ehi40j5f&dl=0",
+    play: true,
+  },
+  {
+    name: "Not Dead Yet",
+    artist: "Ledger",
+    file: "https://dl.dropboxusercontent.com/scl/fi/ly9yp3t7zcuh4pikzxv05/LEDGER_-Not-Dead-Yet-OFFICIAL-VIDEO.mp3?rlkey=uva6d4kkctjxzvemqzoq6tmey&st=gm4usl9f&dl=0",
+    play: true,
+  },
+  {
+    name: "All Around Me",
+    artist: "Flyleaf",
+    file: "https://dl.dropboxusercontent.com/scl/fi/k5gpk70im8y8o2naod2lo/Flyleaf-All-Around-Me-Official-Music-Video.mp3?rlkey=2bkxrqckz7kx14b3js13dg3n8&st=awwyx3q8&dl=0",
+    play: true,
+  },
+  {
+    name: "You Decide",
+    artist: "Fireflight",
+    file: "https://dl.dropboxusercontent.com/scl/fi/r8qmkh1hl8p6rc6ujzroc/Fireflight-You-Decide.mp3?rlkey=d07qr9h7k952nglybuyi7ghsa&st=o7h4lcba&dl=0",
+    play: true,
+  },
+  {
     name: "Ignite",
     artist: "Alan Walker",
     file: "https://dl.dropboxusercontent.com/scl/fi/i41uob6bqj811vrgn3dlw/10.-Ignite.mp3?rlkey=dhvdsqvqd87eshf41o20gn97v&st=llnc3ngc&dl=0",

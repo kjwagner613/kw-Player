@@ -9,7 +9,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: rgb(242, 135, 219);
+  background-color: rgb(27, 20, 42);
   margin-top: 0;
   margin-bottom: 0;
   margin: 0 auto;
@@ -18,7 +18,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 13px solid rgb(237, 181, 225);
+  border: 13px solid black;
   overflow-y: hidden;
 }
 
@@ -46,14 +46,14 @@ body {
   position: relative;
   margin-top: 55px;
   margin-bottom: 55px;
-  border: 3px solid rgb(237, 181, 225);
+  border: 3px solid black;
 }
 
 .player-image {
   width: 100%;
   display: block;
   border-radius: 12px 12px 0 0;
-  box-shadow: 0 4px 16px #ed126d;
+  box-shadow: 0 4px 16px black;
 }
 
 .lcd-display {
@@ -64,13 +64,13 @@ body {
   width: 70%;
   height: 15%;
   background: #222;
-  color: rgb(255, 0, 200);
+  color: white;
   font-family: "Digital-7", monospace, Arial, sans-serif;
   font-size: 2em;
   border-radius: 8px;
-  border: 2px solid rgb(255, 0, 200);
+  border: 2px solid black;
   text-align: center;
-  box-shadow: 0 0 10px rgb(255, 0, 200);
+  box-shadow: 0 0 10px black;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -93,20 +93,20 @@ body {
   width: 85%;
   border-radius: 8px;
   background: #fff;
-  border: 2px solid rgb(255, 0, 200);
-  box-shadow: 0 2px 8px rgb(255, 0, 200);
+  border: 2px solid black;
+  box-shadow: 0 2px 8px black;
   pointer-events: auto;
 }
 
 button {
-  background-color: #ef0ed4;
+  background-color: #110910;
   border: solid;
   border-radius: 8px;
   padding: 10px 24px;
   font-size: 22px;
   color: white;
   font-weight: bold;
-  border-color: #f70084;
+  border-color: black;
   margin-top: 10px;
   width: 75vw;
   max-width: 300px;
@@ -134,8 +134,8 @@ button {
 /* Playlist selector styling */
 #playlist-selector {
   background: #333;
-  color: rgb(255, 0, 200);
-  border: 1px solid rgb(255, 0, 200);
+  color: white;
+  border: 1px red;
   border-radius: 4px;
   padding: 5px;
   font-family: "Digital-7", monospace, Arial, sans-serif;
@@ -149,14 +149,14 @@ button {
 
 #playlist-selector option {
   background: #333;
-  color: rgb(255, 0, 200);
+  color: purple;
   padding: 5px;
   text-align: center;
 }
 
 #playlist-selector:focus {
   outline: none;
-  box-shadow: 0 0 5px rgb(255, 0, 200);
+  box-shadow: 0 0 5px grey;
 }
 
 /* SoundCloud container styling */
@@ -168,8 +168,8 @@ button {
   width: 85%;
   height: 16px;
   border-radius: 8px;
-  border: 2px solid rgb(255, 0, 200);
-  box-shadow: 0 2px 8px rgb(255, 0, 200);
+  border: 2px solid grey;
+  box-shadow: 0 2px 8px grey;
   transform: scale(0.5);
   overflow: hidden;
 }
