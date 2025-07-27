@@ -145,6 +145,7 @@ button {
   align-items: center;
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 #playlist-selector option {
