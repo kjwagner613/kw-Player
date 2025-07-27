@@ -80,7 +80,7 @@ body {
 
 .status-display {
   font-size: 0.7em;
-  color: #0f0;
+  color: rgb(177, 33, 4);
 }
 
 #audioPlayer {
