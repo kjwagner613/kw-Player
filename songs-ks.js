@@ -2,6 +2,42 @@
 //Kevins Playlist
 const songsKw = [
   {
+    name: "Everything's Changed Me",
+    artist: "Leire",
+    file: "https://dl.dropboxusercontent.com/scl/fi/t1323yijxv0kfbn9um1a1/Adele-Cover.mp3?rlkey=2j00b0ajez8yvm75ik6gihbu3&st=4a92l4xc&dl=0",
+    play: "true",
+  },
+  {
+    name: "Always on my Mind",
+    artist: "Leire",
+    file: "https://dl.dropboxusercontent.com/scl/fi/1pe4el6v88tk19sm2t8u9/Youre-Always-On-My-Mind-Willie-Nelson-Cover.mp3?rlkey=a2lbuldbwouur9uavvimqzs3r&st=tdjarokv&dl=0",
+    play: "true",
+  },
+  {
+    name: "Let it Be",
+    artist: "Leire",
+    file: "https://dl.dropboxusercontent.com/scl/fi/6r4saqyycsitlq7ith3oy/Let-It-Be-Beathes-Cover.mp3?rlkey=fekaabx6c0yc11dj7l4krvso2&st=i55l75ev&dl=0",
+    play: "true",
+  },
+  {
+    name: "Skyfall",
+    artist: "Leire",
+    file: "https://dl.dropboxusercontent.com/scl/fi/utiilekd5d1sg638smn4d/Adele-Skyfal-Coverl.mp3?rlkey=82wl17rgg1qjv99i48jg8gde7&st=y4hfch41&dl=0",
+    play: "true",
+  },
+  {
+    name: "Wicked Game",
+    artist: "Leire",
+    file: "https://dl.dropboxusercontent.com/scl/fi/wk9o6e093n73sxh3bmodg/Wicked-Game-Cover.mp3?rlkey=x4032ou1dsc4d90tjn9l1ewah&st=ag14v1j5&dl=0",
+    play: "true",
+  },
+  {
+    name: "I Shot the Sheriff",
+    artist: "Leire",
+    file: "https://dl.dropboxusercontent.com/scl/fi/65d73hqq2bvn41peihlts/Knockin-On-Heavens-Door-Cover.mp3?rlkey=55zwqdbsd2a5ne9wnv9wsretw&st=1ejr432q&dl=0",
+    play: "true",
+  },
+  {
     name: "Unbreakable",
     artist: "Fireflight",
     file: "https://dl.dropboxusercontent.com/scl/fi/kupg0tpkhh5fd18d1lg4d/Fireflight-Unbreakable.mp3?rlkey=21z75fsevnrculttytgde0kwf&st=ehi40j5f&dl=0",
@@ -396,12 +432,6 @@ const songsKw = [
     name: "We saw gold",
     artist: "Tones & I",
     file: "https://dl.dropboxusercontent.com/scl/fi/m0nsuopkro244w30on1ej/I-Get-High.mp3?rlkey=giuzvlv8i1euu2qb3iix5xe6p&st=wbe5y86r&dl=0",
-    play: true,
-  },
-  {
-    name: "PNAU Mix",
-    artist: "Elton John",
-    file: "https://dl.dropboxusercontent.com/scl/fi/4p9hpo906qide0dro6r8x/03-Cold-Heart-PNAU-Remix.mp3?rlkey=hqnjviz5cq2hlkxmy1gzml67w&st=tlvwqce6&dl=0",
     play: true,
   },
   {
