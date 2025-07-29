@@ -1,10 +1,30 @@
-//updated 6/26/2025
+//updated 7/29/2025
 //Kevins Playlist
 const songsKw = [
   {
-    name: "Everything's Changed Me",
-    artist: "Leire",
-    file: "https://dl.dropboxusercontent.com/scl/fi/t1323yijxv0kfbn9um1a1/Adele-Cover.mp3?rlkey=2j00b0ajez8yvm75ik6gihbu3&st=4a92l4xc&dl=0",
+    name: "Power",
+    artist: "Ren",
+    file: "https://dl.dropboxusercontent.com/scl/fi/v2fh2i3jyal7yh8m3w2fp/Ren-Power-Official-Music-Video.mp3?rlkey=y1s4x1o556vhm7yow6gzv5t9a&st=wtkwzsxk&dl=0",
+    play: "true",
+
+  },
+  {
+    name: "Murderer",
+    artist: "Ren",
+    file: "https://dl.dropboxusercontent.com/scl/fi/kzrlpu4awms4np9id26df/Ren-Murderer-Official-Music-Video.mp3?rlkey=6l0uq6hnc6fyhsh14g3onqmen&st=bxkh6kos&dl=0",
+    play: "true",
+
+  },
+  {
+    name: "Suicide",
+    artist: "Ren",
+    file: "https://www.dropbox.com/scl/fi/s3rhe0gyhkpf3o6zyzuoj/Su-cIde-Official-Music-Video.mp3?rlkey=fjmbnlwlqd39b29cbzm44es02&st=0g33vzst&dl=0",
+    play: "true",
+  },
+  {
+    name: "Kujo Beat Down",
+    artist: "Ren",
+    file: "https://dl.dropboxusercontent.com/scl/fi/v2tbrf52qkqc9ff2blr46/Ren-KUJO-BEAT-DOWN.mp3?rlkey=wquzgn2pqml3918gxm1fhxcjl&st=9z6et0w3&dl=0",
     play: "true",
   },
   {
