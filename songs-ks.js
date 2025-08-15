@@ -1,6 +1,12 @@
-//updated 7/29/2025
+//updated 8/15/2025
 //Kevins Playlist
 const songsKw = [
+  {
+    name: "World on Fire - Full Album",
+    artist: "Stick Figure",
+    file: "https://dl.dropboxusercontent.com/scl/fi/mvky96b4b4lokl96x4npa/World-on-Fire-Full-Album.mp3?rlkey=cpr0i61legcj8mwqf1n0fkt22&st=78h0kpce&dl=0",
+    play: "true",
+  },
   {
     name: "Power",
     artist: "Ren",
