@@ -1,12 +1,6 @@
 //updated 8/15/2025
 //Kevins Playlist
 const songsKw = [
-    {
-    name: "From the River to the Rocks",
-    artist: "Stick Figure",
-    file: "https://dl.dropboxusercontent.com/scl/fi/kpdh08p6rcrqex2cms1cq/From-the-River-to-the-Rocks.mp3?rlkey=mueirk1cdbwhqrre5m22dgc4h&st=rt6no32t&dl=0",
-    play: "true",
-  },
   {
     name: "Angels above Me",
     artist: "Stick Figure",
