@@ -4,14 +4,14 @@ const songsKw = [
     {
     name: "Let It Go",
     artist: "The Neighborhood",
-    file: "https://www.dropbox.com/scl/fi/z1dhmlfkolf3d1i13tdvx/The-Neighbourhood-Let-It-Go-Official-Video.mp3?rlkey=npnr836cvzx3sjkzeju7441ev&st=psc0xoor&dl=0",
+    file: "https://dl.dropboxusercontent.com/scl/fi/z1dhmlfkolf3d1i13tdvx/The-Neighbourhood-Let-It-Go-Official-Video.mp3?rlkey=npnr836cvzx3sjkzeju7441ev&st=psc0xoor&dl=1",
     play: true,
   },
   
   {
     name: "Violets Tale",
     artist: "Ren",
-    file: "https://dl.dropboxusercontent.com/scl/fi/qqzbwlyqn75dxrkweznyl/Violets-Tale-Official-Music-Video.mp3?rlkey=qri3g7ybaqze5mal8wh7wegnr&st=m6b4fraj&dl=0",
+    file: "https://dl.dropboxusercontent.com/scl/fi/qqzbwlyqn75dxrkweznyl/Violets-Tale-Official-Music-Video.mp3?rlkey=qri3g7ybaqze5mal8wh7wegnr&st=m6b4fraj&dl=1",
     play: true,
   },
   {
