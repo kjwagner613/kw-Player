@@ -2,12 +2,17 @@
 //Kevins Playlist
 const songsKw = [
     {
+    name: "Bartholomew",
+    artist: "Silent Comedy",
+    file: "https://dl.dropboxusercontent.com/scl/fi/0y3vgv2mfbpib7z54mt07/SilentComedy-Bartholomew.mp3?rlkey=t96d1s6xyr7xfdwqcakkti7gf&st=odi8iomu&dl=0",
+    play: true,
+  },
+  {
     name: "Let It Go",
     artist: "The Neighborhood",
     file: "https://dl.dropboxusercontent.com/scl/fi/z1dhmlfkolf3d1i13tdvx/The-Neighbourhood-Let-It-Go-Official-Video.mp3?rlkey=npnr836cvzx3sjkzeju7441ev&st=u7hr0rbt&dl=0",
     play: true,
   },
-  
   {
     name: "Violets Tale",
     artist: "Ren",
