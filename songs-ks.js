@@ -1,10 +1,16 @@
-//updated 9/30/2025
+//updated 10/1/2025
 //Kevins Playlist
 const songsKw = [
   {
+    name: "Long Time Traveller",
+    artist: "Wailing Jennys",
+    file: "https://dl.dropboxusercontent.com/scl/fi/skdgmkfivjzosvlgum9ep/Long-Time-Traveller-wailingJennys.mp3?rlkey=qc78f5wj7vw5vq379vycg5b3d&st=bl8cmprq&dl=1",
+    play: true,
+  },
+  {
     name: "Im Only Joking",
     artist: "Kongos",
-    file: "https://dl.dropboxusercontent.com/scl/fi/ni6w5cfse0bmh6jpp8r6l/01-I-m-Only-Joking.mp3?rlkey=93353hg6yfamidx8hw6vr6h87&st=b8isvwnc&dl=0",
+    file: "https://dl.dropboxusercontent.com/scl/fi/ni6w5cfse0bmh6jpp8r6l/01-I-m-Only-Joking.mp3?rlkey=93353hg6yfamidx8hw6vr6h87&st=b8isvwnc&dl=1",
     play: true,
   },
   {
