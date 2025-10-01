@@ -2,6 +2,12 @@
 //Kevins Playlist
 const songsKw = [
   {
+    name: "Beggin For Thread",
+    artist: "Banks",
+    file: "https://dl.dropboxusercontent.com/scl/fi/11o3baie0c363e6tszsbm/The-Originals-2x03-Banks-Beggin-For-Thread.mp3?rlkey=esrpkxp04u2dju0ywhxx2l5pd&st=76cc7d5x&dl=1",
+    play: true,
+  },
+  {
     name: "Long Time Traveller",
     artist: "Wailing Jennys",
     file: "https://dl.dropboxusercontent.com/scl/fi/skdgmkfivjzosvlgum9ep/Long-Time-Traveller-wailingJennys.mp3?rlkey=qc78f5wj7vw5vq379vycg5b3d&st=bl8cmprq&dl=1",
