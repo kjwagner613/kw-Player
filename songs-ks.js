@@ -1,6 +1,24 @@
 //updated 9/30/2025
 //Kevins Playlist
 const songsKw = [
+  {
+    name: "Im Only Joking",
+    artist: "Kongos",
+    file: "https://dl.dropboxusercontent.com/scl/fi/ni6w5cfse0bmh6jpp8r6l/01-I-m-Only-Joking.mp3?rlkey=93353hg6yfamidx8hw6vr6h87&st=b8isvwnc&dl=0",
+    play: true,
+  },
+  {
+    name: "Come ith Me Now",
+    artist: "Kongos",
+    file: "https://dl.dropboxusercontent.com/scl/fi/gvrdkr1o07zjagvmmzu5v/02-Come-With-Me-Now.mp3?rlkey=7m4l5t2s97ve8ygfuwwk85ib6&st=wsx4sj7j&dl=0",
+    play: true,
+  },
+  {
+    name: "Bartholomew",
+    artist: "Silent Comedy",
+    file: "https://dl.dropboxusercontent.com/scl/fi/0y3vgv2mfbpib7z54mt07/SilentComedy-Bartholomew.mp3?rlkey=t96d1s6xyr7xfdwqcakkti7gf&st=odi8iomu&dl=0",
+    play: true,
+  },
     {
     name: "Bartholomew",
     artist: "Silent Comedy",
