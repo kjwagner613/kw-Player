@@ -1,6 +1,12 @@
-//updated 10/1/2025
+//updated 10/7/2025
 //Kevins Playlist
 const songsKw = [
+  {
+    name: "Sunglasses at Night",
+    artist: "Corey Hart",
+    file: "https://dl.dropboxusercontent.com/scl/fi/5nrq2krf9ctwvrormy3qz/Corey-Hart-Sunglasses-at-Night-HQ.mp3?rlkey=05ceypuk7ngtown0kkp7231g9&st=0jzqfb55&dl=1",
+    play: true,
+  },
   {
     name: "No Plan",
     artist: "Hozier",
@@ -38,12 +44,6 @@ const songsKw = [
     play: true,
   },
   {
-    name: "Bartholomew",
-    artist: "Silent Comedy",
-    file: "https://dl.dropboxusercontent.com/scl/fi/0y3vgv2mfbpib7z54mt07/SilentComedy-Bartholomew.mp3?rlkey=t96d1s6xyr7xfdwqcakkti7gf&st=odi8iomu&dl=0",
-    play: true,
-  },
-    {
     name: "Bartholomew",
     artist: "Silent Comedy",
     file: "https://dl.dropboxusercontent.com/scl/fi/0y3vgv2mfbpib7z54mt07/SilentComedy-Bartholomew.mp3?rlkey=t96d1s6xyr7xfdwqcakkti7gf&st=odi8iomu&dl=0",
