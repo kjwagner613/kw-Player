@@ -1,6 +1,18 @@
-//updated 10/7/2025
+//updated 10/14/2025
 //Kevins Playlist
 const songsKw = [
+  {
+    name: "Sail",
+    artist: "AWOLNATION",
+    file: "https://dl.dropboxusercontent.com/scl/fi/kjn77d58j742ka3i6s3wc/10-Sail.mp3?rlkey=u151rtb7mfhi9nfox0mmxtz0l&st=zkq4gvr4&dl=1",
+    play: true,
+  },
+  {
+    name: "Is There A Ghost",
+    artist: "Band of Horses",
+    file: "https://dl.dropboxusercontent.com/scl/fi/a18h6sxanjmcfvel1giz5/Is-There-A-Ghost.mp3?rlkey=3pdwmgydsxu1gxzrknwm2onhf&st=ze3cf4sp&dl=1",
+    play: true,
+  },
   {
     name: "Sunglasses at Night",
     artist: "Corey Hart",
