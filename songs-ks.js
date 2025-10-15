@@ -2,6 +2,18 @@
 //Kevins Playlist
 const songsKw = [
   {
+    name: "Gimme Shelter",
+    artist: "The Rolling Stones",
+    file: "https://dl.dropboxusercontent.com/scl/fi/gini8jgkomly954m2tgvj/The-Rolling-Stones-Gimme-Shelter-Official-Lyric-Video.mp3?rlkey=7bdf1kpv1riyz6zcxflkamj01&st=57cutoh9&dl=1",
+    play: true,
+  },
+  {
+    name: "Sympathy For The Devil",
+    artist: "The Rolling Stones",
+    file: "https://dl.dropboxusercontent.com/scl/fi/gnfx8wgdxdvws5q2ls1un/The-Rolling-Stones-Sympathy-For-The-Devil-Official-Video-4K.mp3?rlkey=m1rligrw6rrm70dcj0kzm1a64&st=90g7s4e5&dl=1",
+    play: true,
+  },
+  {
     name: "Sail",
     artist: "AWOLNATION",
     file: "https://dl.dropboxusercontent.com/scl/fi/kjn77d58j742ka3i6s3wc/10-Sail.mp3?rlkey=u151rtb7mfhi9nfox0mmxtz0l&st=zkq4gvr4&dl=1",
