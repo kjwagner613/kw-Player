@@ -4,13 +4,13 @@ const songsKw = [
   {
     name: "You Want It Darker",
     artist: "Leonard Cohen",
-    file: "https://dl.dropboxusercontent.com/scl/fi/bjzb6t1gv9to07sw7t0ax/Leonard-Cohen-You-Want-It-Darker-Official-Audio.mp3?rlkey=w0b0nav9yg2tuahcw8igynykw&st=7oviorkv&dl=1",
+    file: "https://dl.dropboxusercontent.com/scl/fi/bjzb6t1gv9to07sw7t0ax/Leonard-Cohen-You-Want-It-Darker-Official-Audio.mp3?rlkey=w0b0nav9yg2tuahcw8igynykw&st=7oviorkv&dl=0",
     play: true,
   },
   {
     name: "Crossfire",
     artist: "Stevie Ray Vaughan",
-    file: "https://dl.dropboxusercontent.com/scl/fi/mp6z7fmsswx3mpyh6d4ex/Stevie-Ray-Vaughan-Crossfire-Official-Video.mp3?rlkey=os91mgfzwe76jkh385uq87gy1&st=0rdhabr9&dl=1",
+    file: "https://dl.dropboxusercontent.com/scl/fi/mp6z7fmsswx3mpyh6d4ex/Stevie-Ray-Vaughan-Crossfire-Official-Video.mp3?rlkey=os91mgfzwe76jkh385uq87gy1&st=0rdhabr9&dl=0",
     play: true,
   },
   {
