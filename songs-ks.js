@@ -1,10 +1,28 @@
-//updated 10/17/2025
+//updated 10/27/2025
 //Kevins Playlist
 const songsKw = [
   {
+    name: "The Silence",
+    artist: "Manchester Orchestra",
+    file: "https://dl.dropboxusercontent.com/scl/fi/hzl7bhuigqc1vc79yxfuh/Manchester-Orchestra-The-Silence-Official-Music-Video.mp3?rlkey=s0fv1cx3lx0jcdh4b6pxb2pbx&st=k2uim51n&dl=1",
+    play: true,
+  },
+  {
+    name: "Bring It On",
+    artist: "Nick Cave & The Bad Seeds",
+    file: "https://dl.dropboxusercontent.com/scl/fi/p74q6u0aiq2uy4vf8iqno/Nick-Cave-The-Bad-Seeds-Bring-It-On-Official-Audio.mp3?rlkey=jen74ebvq3vetiiracwmddf1m&st=gnwlw5ot&dl=1",
+    play: true,
+  },
+  {
+    name: "Red Right Hand",
+    artist: "Nick Cave & The Bad Seeds",
+    file: "https://dl.dropboxusercontent.com/scl/fi/g2nfnqwcuh7kcy2l3u9j1/Nick-Cave-The-Bad-Seeds-Red-Right-Hand.mp3?rlkey=gx2y1l6mljphu71pgsiwuirto&st=a20vcc84&dl=1",
+    play: true,
+  },
+  {
     name: "You Want It Darker",
     artist: "Leonard Cohen",
-    file: "https://dl.dropboxusercontent.com/scl/fi/bjzb6t1gv9to07sw7t0ax/Leonard-Cohen-You-Want-It-Darker-Official-Audio.mp3?rlkey=w0b0nav9yg2tuahcw8igynykw&st=7oviorkv&dl=0",
+    file: "https://dl.dropboxusercontent.com/scl/fi/bjzb6t1gv9to07sw7t0ax/Leonard-Cohen-You-Want-It-Darker-Official-Audio.mp3?rlkey=w0b0nav9yg2tuahcw8igynykw&st=7oviorkv&dl=1",
     play: true,
   },
   {
@@ -28,25 +46,13 @@ const songsKw = [
   {
     name: "Pride and Joy",
     artist: "Stevie Ray Vaughan",
-    file: "https://dl.dropboxusercontent.com/scl/fi/asaxkt0weg81uzg4xokte/Stevie-Ray-Vaughan-Pride-and-Joy-Studio-version.mp3?rlkey=aqm7r05237cllo1qtar9w4ts1&st=srk4be41&dl=0",
-    play: true,
-  },
-  {
-    name: "Bring It On",
-    artist: "Nick Cave & The Bad Seeds",
-    file: "https://dl.dropboxusercontent.com/scl/fi/p74q6u0aiq2uy4vf8iqno/Nick-Cave-The-Bad-Seeds-Bring-It-On-Official-Audio.mp3?rlkey=jen74ebvq3vetiiracwmddf1m&st=gnwlw5ot&dl=0",
+    file: "https://dl.dropboxusercontent.com/scl/fi/asaxkt0weg81uzg4xokte/Stevie-Ray-Vaughan-Pride-and-Joy-Studio-version.mp3?rlkey=aqm7r05237cllo1qtar9w4ts1&st=srk4be41&dl=1",
     play: true,
   },
   {
     name: "Empty Chair",
     artist: "",
-    file: "https://dl.dropboxusercontent.com/scl/fi/qpw64t7246s6qnkhlob6e/Empty-Chair.mp3?rlkey=ee15syr6xumbc7os2rgtkug3e&st=xaqvpm5m&dl=0",
-    play: true,
-  },
-  {
-    name: "Red Right Hand",
-    artist: "Nick Cave & The Bad Seeds",
-    file: "https://dl.dropboxusercontent.com/scl/fi/g2nfnqwcuh7kcy2l3u9j1/Nick-Cave-The-Bad-Seeds-Red-Right-Hand.mp3?rlkey=gx2y1l6mljphu71pgsiwuirto&st=a20vcc84&dl=0",
+    file: "https://dl.dropboxusercontent.com/scl/fi/qpw64t7246s6qnkhlob6e/Empty-Chair.mp3?rlkey=ee15syr6xumbc7os2rgtkug3e&st=xaqvpm5m&dl=1",
     play: true,
   },
   {
