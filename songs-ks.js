@@ -1,6 +1,12 @@
-//updated 10/27/2025
+//updated 12/13/2025
 //Kevins Playlist
 const songsKw = [
+    {
+    name: "Chasing Cars",
+    artist: "Snow Patrol",
+    file: "https://dl.dropboxusercontent.com/scl/fi/0x0m2p0sejnaig81lf28r/Snow-Patrol-Chasing-Cars.mp3?rlkey=96buto719q66udi7ixdp2vp5i&st=qti7cgdc&dl=0",
+    play: true,
+  },
   {
     name: "The Silence",
     artist: "Manchester Orchestra",
