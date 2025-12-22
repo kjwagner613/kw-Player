@@ -2,6 +2,12 @@
 //Kevins Playlist
 const songsKw = [
     {
+    name: "Someone You Loved",
+    artist: "Lewis Capaldi",
+    file: "https://dl.dropboxusercontent.com/scl/fi/id30dd2gigmccl3zxvhx4/03.-Someone-You-Loved.mp3?rlkey=f6ivjlv8gj75y3uh88k6p15si&st=tv6t1k0j&dl=0",
+    play: true,
+  },
+    {
     name: "Chasing Cars",
     artist: "Snow Patrol",
     file: "https://dl.dropboxusercontent.com/scl/fi/0x0m2p0sejnaig81lf28r/Snow-Patrol-Chasing-Cars.mp3?rlkey=96buto719q66udi7ixdp2vp5i&st=qti7cgdc&dl=0",
