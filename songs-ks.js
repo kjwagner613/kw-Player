@@ -1,6 +1,12 @@
-//updated 12/13/2025
+//updated 12/25/2025
 //Kevins Playlist
 const songsKw = [
+   {
+    name: "Seven Years",
+    artist: "Natalie Merchant",
+    file: "https://dl.dropboxusercontent.com/scl/fi/xqcha53u88nmisrd9g4um/Seven-Years.mp3?rlkey=h943majazlaa5i5rnrt1pazn8&st=q58to8qq&dl=0",
+    play: true,
+  },
     {
     name: "Someone You Loved",
     artist: "Lewis Capaldi",
