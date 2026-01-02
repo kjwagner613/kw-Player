@@ -1,7 +1,13 @@
-//updated 12/25/2025
-//Kevins Playlist
+//updated 01/01/2025
+//Kevin's Playlist
 const songsKw = [
-   {
+     {
+    name: "I Feel Love",
+    artist: "Donna Summer",
+    file: "https://dl.dropboxusercontent.com/scl/fi/3jnhjr8hm81y1f70mbt3j/I-Feel-Love-Donna-Summer.mp4?rlkey=n44j4o5ir65kb3o3gcbdza2j6&st=bnwbsof8&dl=0",
+    play: "true",
+     },
+    {
     name: "Seven Years",
     artist: "Natalie Merchant",
     file: "https://dl.dropboxusercontent.com/scl/fi/xqcha53u88nmisrd9g4um/Seven-Years.mp3?rlkey=h943majazlaa5i5rnrt1pazn8&st=q58to8qq&dl=0",
