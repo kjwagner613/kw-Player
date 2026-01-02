@@ -4,9 +4,9 @@ const songsKw = [
      {
     name: "I Feel Love",
     artist: "Donna Summer",
-    file: "https://dl.dropboxusercontent.com/scl/fi/8k3qbh5doqix5tk0rzqsy/i-Feel-Love-DS.mp3?rlkey=2ut9uj4u23f5e2yqpz62tlh07&st=ofamlfgb&dl=0",
-    play: "true",
-     },
+    file: "https://dl.dropboxusercontent.com/scl/fi/8k3qbh5doqix5tk0rzqsy/i-Feel-Love-DS.mp3?rlkey=2ut9uj4u23f5e2yqpz62tlh07&st=ech0puar&dl=0",
+    play: true,
+     },   
     {
     name: "Seven Years",
     artist: "Natalie Merchant",
