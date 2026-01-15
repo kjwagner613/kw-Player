@@ -1,25 +1,31 @@
 //updated 01/01/2025
 //Kevin's Playlist
 const songsKw = [
-     {
+  {
+    name: "All The Debts I Owe",
+    artist: "Caamp",
+    file: "https://dl.dropboxusercontent.com/scl/fi/e3nkhz58kanui5eppksmg/All-the-Debts-I-Owe.mp3?rlkey=clrlo2b7m7lvunurthbkacdjy&st=lervk1cf&dl=0",
+    play: true,
+  },
+  {
     name: "I Feel Love",
     artist: "Donna Summer",
     file: "https://dl.dropboxusercontent.com/scl/fi/8k3qbh5doqix5tk0rzqsy/i-Feel-Love-DS.mp3?rlkey=2ut9uj4u23f5e2yqpz62tlh07&st=ech0puar&dl=0",
     play: true,
-     },   
-    {
+  },
+  {
     name: "Seven Years",
     artist: "Natalie Merchant",
     file: "https://dl.dropboxusercontent.com/scl/fi/xqcha53u88nmisrd9g4um/Seven-Years.mp3?rlkey=h943majazlaa5i5rnrt1pazn8&st=q58to8qq&dl=0",
     play: true,
   },
-    {
+  {
     name: "Someone You Loved",
     artist: "Lewis Capaldi",
     file: "https://dl.dropboxusercontent.com/scl/fi/id30dd2gigmccl3zxvhx4/03.-Someone-You-Loved.mp3?rlkey=f6ivjlv8gj75y3uh88k6p15si&st=tv6t1k0j&dl=0",
     play: true,
   },
-    {
+  {
     name: "Chasing Cars",
     artist: "Snow Patrol",
     file: "https://dl.dropboxusercontent.com/scl/fi/0x0m2p0sejnaig81lf28r/Snow-Patrol-Chasing-Cars.mp3?rlkey=96buto719q66udi7ixdp2vp5i&st=qti7cgdc&dl=0",
