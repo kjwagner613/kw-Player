@@ -224,6 +224,7 @@ button {
   /* max-width: 50%; */
   /* max-height: 50%; */
   border-radius: 12px;
+  transform: scale(0.7);
   
 }
 
