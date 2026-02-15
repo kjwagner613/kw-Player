@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
 
+/* Fonts */
 @font-face {
   font-family: "Digital-7";
   src: url("./assets/Digital-7 Regular.ttf") format("truetype");
@@ -7,22 +8,20 @@
   font-style: normal;
 }
 
+/* Base Page */
 body {
   font-family: Arial, sans-serif;
   background-color: rgb(27, 20, 42);
-  margin-top: 0;
-  margin-bottom: 0;
-  margin: 0 auto;
-  height: 90%;
-  /* width: 90%; */
-  padding: 5rem 2rem;
+  margin: 0;
+  min-height: 100vh;
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 5px solid black;
-  /* overflow-y: hidden; */
 }
 
+/* Song List Page */
 .song-list-container {
   max-width: 400px;
 }
@@ -36,21 +35,36 @@ body {
   margin: 0;
 }
 
+/* Player Layout */
 .player-container {
-  /* width: 90vw; */
-  width: 360px;
-  height: 800px;
   display: flex;
   flex-direction: column;
-  /* align-items: stretch; */
+  align-items: center;
   gap: 1em;
   position: relative;
-  /* top: 10vh; */
-  /* margin-top: 55px; */
-  margin-bottom: 55px;
+  width: fit-content;
+  height: auto;
+  margin: 0 auto;
   border: 3px solid black;
+  padding: 0.75rem;
 }
 
+.player-main {
+  width: 360px;
+  height: auto;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+/* Orientation Layout */
+@media (orientation: landscape) {
+  .player-container {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* Player Visuals */
 .player-image {
   width: 100%;
   display: block;
@@ -60,11 +74,10 @@ body {
 
 .lcd-display {
   position: absolute;
-  top: 6%;
+  top: 14%;
   left: 10%;
-  /* transform: translateX(-50%); */
   width: 75%;
-  height: 13%;
+  height: 30%;
   min-width: 200px;
   min-height: 3em;
   background: #222;
@@ -88,6 +101,7 @@ body {
   color: rgb(177, 33, 4);
 }
 
+/* Audio / Transport */
 #audioPlayer {
   display: none;
   position: absolute;
@@ -103,6 +117,7 @@ body {
   pointer-events: auto;
 }
 
+/* Generic Buttons */
 button {
   background-color: #110910;
   border: solid;
@@ -117,7 +132,7 @@ button {
   max-width: 300px;
 }
 
-/* Song list specific button styling */
+/* Song List Buttons */
 #song-list button {
   width: 100%;
   max-width: none;
@@ -126,6 +141,7 @@ button {
   padding: 8px 16px;
 }
 
+/* Decorative Text */
 .fancy-script {
   font-family: "Great Vibes", cursive;
   font-size: 7vh;
@@ -136,7 +152,7 @@ button {
   text-align: center;
 }
 
-/* Playlist selector styling */
+/* Playlist Selector */
 #playlist-selector {
   background: #333;
   color: white;
@@ -165,12 +181,11 @@ button {
   box-shadow: 0 0 5px grey;
 }
 
-/* SoundCloud container styling */
+/* SoundCloud Widget */
 #soundcloud-container {
   position: absolute;
   top: 96%;
-  left: 0%;
-
+  left: 0;
   width: 85%;
   height: 16px;
   border-radius: 8px;
@@ -184,7 +199,12 @@ button {
   border-radius: 6px;
 }
 
+/* Small Screens */
 @media (max-width: 500px) {
+  body {
+    padding: 0.5rem;
+  }
+
   .lcd-display {
     font-size: 1.2em;
   }
@@ -194,21 +214,25 @@ button {
   }
 }
 
+/* Secondary Art Panel */
 #pic80s {
-  padding-top: 45%;
-
-
+  display: block;
+  width: auto;
+  height: auto;
+  margin-top: 0;
+  max-width: 50%;
+  aspect-ratio: 5 / 1;
 }
 
+/* Song List CTA */
 #songList {
-  position: absolute;
-  top: 50%;
-  left: 30%;
-  z-index: 1000;
+  display: inline-block;
+  text-align: center;
   border: 3px solid whitesmoke;
   color: whitesmoke;
   padding: 1rem 2rem;
   border-radius: 12px;
+  text-decoration: none;
 }
 
 #songList:hover {

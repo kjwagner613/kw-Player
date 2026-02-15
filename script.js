@@ -336,14 +336,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  function syncBottomImageHeight() {
+    const playerHeadImage = document.querySelector('img[usemap="#image-map"]');
+    const bottomImage = document.getElementById('pic80s');
+    if (!playerHeadImage || !bottomImage) return;
+    if (!playerHeadImage.clientHeight) return;
+    bottomImage.style.height = `${playerHeadImage.clientHeight}px`;
+    bottomImage.style.width = 'auto';
+  }
+
   // Call on load and resize
   makeImageMapResponsive();
+  syncBottomImageHeight();
   window.addEventListener('resize', makeImageMapResponsive);
+  window.addEventListener('resize', syncBottomImageHeight);
 
   // Also call after image loads to ensure proper scaling
   const playerImage = document.querySelector('img[usemap="#image-map"]');
   if (playerImage) {
-    playerImage.addEventListener('load', makeImageMapResponsive);
+    playerImage.addEventListener('load', () => {
+      makeImageMapResponsive();
+      syncBottomImageHeight();
+    });
   }
 
 });
