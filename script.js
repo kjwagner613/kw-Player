@@ -294,52 +294,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Responsive image map functionality
   function makeImageMapResponsive() {
-    const img = document.querySelector('.player-container img');
+    const img = document.querySelector('img[usemap="#image-map"]');
     const map = document.querySelector('map[name="image-map"]');
+    if (!img || !map) return;
     const areas = map.querySelectorAll('area');
 
     if (!img || !areas.length) return;
 
-    // Store original coordinates on first load
-    if (!img.hasAttribute('data-original-width')) {
-      // Based on your coordinate values, adjusting to likely image dimensions
-      img.setAttribute('data-original-width', '700'); // Adjust based on your actual image width
-      img.setAttribute('data-original-height', '1350'); // Adjusted based on coordinate analysis
-
-      areas.forEach(area => {
-        area.setAttribute('data-original-coords', area.getAttribute('coords'));
-      });
-    }
-
-    const originalWidth = parseInt(img.getAttribute('data-original-width'));
-    const originalHeight = parseInt(img.getAttribute('data-original-height'));
-    const currentWidth = img.offsetWidth;
-    const currentHeight = img.offsetHeight;
-
-    const scaleX = currentWidth / originalWidth;
-    const scaleY = currentHeight / originalHeight;
+    if (!img.naturalWidth || !img.naturalHeight) return;
 
     areas.forEach(area => {
-      const originalCoords = area.getAttribute('data-original-coords').split(',');
+      if (!area.hasAttribute('data-original-coords')) {
+        area.setAttribute('data-original-coords', area.getAttribute('coords'));
+      }
+    });
+
+    const scaleX = img.clientWidth / img.naturalWidth;
+    const scaleY = img.clientHeight / img.naturalHeight;
+    const circleScale = Math.min(scaleX, scaleY);
+
+    areas.forEach(area => {
+      const originalCoords = area.getAttribute('data-original-coords').split(',').map(Number);
       const shape = area.getAttribute('shape');
 
       if (shape === 'circle') {
-        // Circle: x, y, radius - apply vertical offset to move buttons up
-        const verticalOffset = Math.round(currentHeight * 0.05); // 5% of current height offset
         const newCoords = [
           Math.round(originalCoords[0] * scaleX),
-          Math.round(originalCoords[1] * scaleY) - verticalOffset,
-          Math.round(originalCoords[2] * scaleX)
+          Math.round(originalCoords[1] * scaleY),
+          Math.round(originalCoords[2] * circleScale)
         ];
         area.setAttribute('coords', newCoords.join(','));
       } else if (shape === 'rect') {
-        // Rectangle: x1, y1, x2, y2 - apply vertical offset to move buttons up
-        const verticalOffset = Math.round(currentHeight * 0.05); // 5% of current height offset
         const newCoords = [
           Math.round(originalCoords[0] * scaleX),
-          Math.round(originalCoords[1] * scaleY) - verticalOffset,
+          Math.round(originalCoords[1] * scaleY),
           Math.round(originalCoords[2] * scaleX),
-          Math.round(originalCoords[3] * scaleY) - verticalOffset
+          Math.round(originalCoords[3] * scaleY)
         ];
         area.setAttribute('coords', newCoords.join(','));
       }
@@ -351,7 +341,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener('resize', makeImageMapResponsive);
 
   // Also call after image loads to ensure proper scaling
-  const playerImage = document.querySelector('.player-container img');
+  const playerImage = document.querySelector('img[usemap="#image-map"]');
   if (playerImage) {
     playerImage.addEventListener('load', makeImageMapResponsive);
   }

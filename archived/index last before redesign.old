@@ -25,14 +25,14 @@
         </span>
       </select>
     </div>
-    <img class="player-image" src="assets/Music Player Head.png" usemap="#image-map" />
+    <img src="assets/newPlayerHead.png" usemap="#image-map" />
     <map name="image-map">
-      <area alt="Previous" title="Previous" href="#" coords="58,260,34" shape="circle" data-action="prev" />
-      <area alt="Play" title="Play" href="#" coords="149,259,33" shape="circle" data-action="play" />
-      <area alt="Pause" title="Pause" href="#" coords="234,258,34" shape="circle" data-action="pause" />
-      <area alt="Next" title="Next" href="#" coords="327,256,32" shape="circle" data-action="next" />
-      <!-- <area alt="Song-List" title="Song-List" coords="217,892,496,1027" shape="rect" data-action="songlist" />
-      <area alt="Medallion" title="Medallion" coords="357,1296,198" shape="circle" data-action="medallion" /> -->
+      <area alt="Previous" title="Previous" coords="135,677,63" shape="circle" data-action="prev" />
+      <area alt="Play" title="Play" coords="281,674,72" shape="circle" data-action="play" />
+      <area alt="Pause" title="Pause" coords="425,676,66" shape="circle" data-action="pause" />
+      <area alt="Next" title="Next" coords="572,673,68" shape="circle" data-action="next" />
+      <area alt="Song-List" title="Song-List" coords="217,892,496,1027" shape="rect" data-action="songlist" />
+      <area alt="Medallion" title="Medallion" coords="357,1296,198" shape="circle" data-action="medallion" />
     </map>
 
     <audio id="audioPlayer" controls></audio>
@@ -48,10 +48,7 @@
     <script src="songs-ks.js"></script>
     <script src="script.js"></script>
 
-    <a href="songlist.html" id="songList" style="position: absolute; top: 50%; left: 30%; z-index: 1000; border: 3px solid black; padding: 1rem 2rem; border-radius: 12px;">Song
-      List</a>
 
-    <img id="pic80s" src="assets/Music Hits of Decades.webp" />
   </div>
 </body>
 
