@@ -1,6 +1,24 @@
 //updated 01/01/2025
 //Kevin's Playlist
 const songsKw = [
+    {
+    name: "Bartholemy",
+    artist: "Silent Comedy",
+    file: "https://dl.dropboxusercontent.com/scl/fi/xvnvsagyxj43ui8665jwr/SilentComedy-Bartholomew.mp3?rlkey=q89o3fjx9xxgeejmb1f6xe4po&st=wujsz0rd&dl=0",
+    play: true,
+  },
+    {
+    name: "Let It Go",
+    artist: "The Neighborhood",
+    file: "https://dl.dropboxusercontent.com/scl/fi/1bccrx8jyvjave7na3dhi/The-Neighbourhood-Let-It-Go-Official-Video.mp3?rlkey=uzoiaj0sqk9ftgf6lsz6uqtsn&st=qadty696&dl=0",
+    play: true,
+  },
+	    {
+    name: "Beggin for Thread",
+    artist: "Banks",
+    file: "https://dl.dropboxusercontent.com/scl/fi/11o3baie0c363e6tszsbm/The-Originals-2x03-Banks-Beggin-For-Thread.mp3?rlkey=esrpkxp04u2dju0ywhxx2l5pd&st=wb9qukgw&dl=0",
+    play: true,
+  },
   {
     name: "All The Debts I Owe",
     artist: "Caamp",
