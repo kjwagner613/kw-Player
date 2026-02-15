@@ -40,6 +40,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 1em;
   position: relative;
   width: fit-content;
@@ -217,11 +218,13 @@ button {
 /* Secondary Art Panel */
 #pic80s {
   display: block;
-  width: auto;
-  height: auto;
+  width: 360px;
+  /* height: auto; */
   margin-top: 0;
-  max-width: 50%;
-  aspect-ratio: 5 / 1;
+  /* max-width: 50%; */
+  /* max-height: 50%; */
+  border-radius: 12px;
+  
 }
 
 /* Song List CTA */
