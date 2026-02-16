@@ -63,6 +63,10 @@ body {
     flex-direction: row;
     align-items: center;
   }
+  #pic80s {
+    order: 2;
+   transform: scale(0.8);
+  }
 }
 
 /* Player Visuals */
