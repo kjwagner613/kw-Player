@@ -1,12 +1,102 @@
-//updated 02/26/2026
+//updated 02/28/2026
 //Kevin's Playlist
 const songsKw = [
- {
-name:'I cant do this',
-artist: 'Dark Grunge',
-file: 'https://dl.dropboxusercontent.com/scl/fi/n3b1eydjhhmk9ja29o1rf/I-CANT-DO-THIS-ANYMORE-Enough-For-Today.mp3?rlkey=er12b5mekmnkjjo9gqzk6ffrc&st=gizbn885&dl=0',
- play: true,
- },
+  {
+    name: 'I cant do this',
+    artist: 'Dark Grunge',
+    file: 'https://dl.dropboxusercontent.com/scl/fi/n3b1eydjhhmk9ja29o1rf/I-CANT-DO-THIS-ANYMORE-Enough-For-Today.mp3?rlkey=er12b5mekmnkjjo9gqzk6ffrc&st=gizbn885&dl=0',
+    play: true,
+  },
+  {
+    name: 'Emotion',
+    artist: 'Dark Grunge',
+    file: 'https://dl.dropboxusercontent.com/scl/fi/kypc3qnx9uo8v7li5wdll/Empty-Lights-Piano-Atmospheric-Grunge-Song-About-Emotion-Dark-Grunge-Raw.mp3?rlkey=wc67zkvpqbb1h0nnr3v6q9fs1&st=hl8c2knl&dl=0',
+    play: true,
+  },
+  {
+    name: 'Anthem',
+    artist: 'Dark Grunge',
+    file: 'https://dl.dropboxusercontent.com/scl/fi/11yryiv68ueoqh8dd7eby/Static-Heart-Industrial-Grunge-Progressive-Rock-Anthem-Dark-Grunge-Raw.mp3?rlkey=8shgsbvbs9830gf6iryvsyhum&st=vaas2nj9&dl=0',
+    play: true,
+  },
+  {
+    name: 'Atmospheric',
+    artist: 'Dark Grunge',
+    file: 'https://dl.dropboxusercontent.com/scl/fi/j783fu6e81ozvbl6d876c/CREEP-Atmospheric-Grunge-Progressive-Rock.mp3?rlkey=jd5mktnlodzn7825vzkwj48tp&st=211swbrz&dl=0',
+    play: true,
+  },
+  {
+    name: 'Hide',
+    artist: 'Dark Grunge',
+    file: 'https://dl.dropboxusercontent.com/scl/fi/3ilkq4oqu32damc8pgc1o/You-Dont-See-Introspective-Grunge-Song-About-What-We-Hide-Dark-Grunge-Raw.mp3?rlkey=uqynkqb6ep6426my0c2rld6xt&st=infd8ubn&dl=0',
+    play: true,
+  },
+  {
+    name: 'Resilience',
+    artist: 'Dark Grunge',
+    file: 'https://dl.dropboxusercontent.com/scl/fi/19vkn492x4cp79sxayp2d/Broken-Progressive-Grunge-Song-About-Healing-Resilience-Dark-Grunge-Raw.mp3?rlkey=m3ifstc8etiqnv0ul7xnpeaan&st=x26xalo0&dl=0',
+    play: true,
+  },
+  {
+    name: 'Healing',
+    artist: 'Dark Grunge',
+    file: 'https://dl.dropboxusercontent.com/scl/fi/lsy5jyycyelm5ea23ypqa/Stay-Where-It-Hurts-Progressive-Grunge-Song-About-Healing-Dark-Grunge-Raw.mp3?rlkey=dvmxn048acuktddnzg4f4a9jq&st=r0rddx5w&dl=0',
+    play: true,
+  },
+  {
+    name: 'Meaning',
+    artist: 'Dark Grunge',
+    file: 'https://dl.dropboxusercontent.com/scl/fi/4j17lm94s7b52n46lywqf/In-the-End-Progressive-Grunge-Song-About-Meaning-Dark-Grunge-Raw.mp3?rlkey=tluodrxp4ktdcrnwf3082ayk0&st=xegkk0a7&dl=0',
+    play: true,
+  },
+  {
+    name: 'Emotional Distance',
+    artist: 'Dark Grunge',
+    file: 'https://dl.dropboxusercontent.com/scl/fi/unum3yfgtmwwwjmiatzyz/Numb-Original-Grunge-Version-Progressive-Grunge-Song-About-Emotional-Distance-Dark-Grunge-Raw.mp3?rlkey=dnp1hf78y3wmz5np252fmf1d5&st=o8jm9j2b&dl=0',
+    play: true,
+  },
+  {
+    name: 'Raw',
+    artist: 'Dark Grunge',
+    file: 'https://dl.dropboxusercontent.com/scl/fi/29zukg892dqoy54urn6ly/Everybody-Hurts-Raw-Grunge-Song-About-Pain-Survival-Dark-Grunge-Raw.mp3?rlkey=33fq3fwafba90gk7geyo4vjv3&st=80tk84im&dl=0',
+    play: true,
+  },
+  {
+    name: 'Post Anthem',
+    artist: 'Dark Grunge',
+    file: 'https://dl.dropboxusercontent.com/scl/fi/m7x62mtay21k8i8331u9s/BURN-IT-DOWN-IN-MY-HEAD-Aggressive-Post-Grunge-Anthem.mp3?rlkey=g5c89vl0t58socnhwzj80c4vz&st=6df503uc&dl=0',
+    play: true,
+  },
+  {
+    name: 'Truth',
+    artist: 'Dark Grunge',
+    file: 'https://dl.dropboxusercontent.com/scl/fi/sh9vfoz3rtsnzu8agissf/Falling-Sky-Cinematic-Orchestral-Grunge-Song-About-Truth-Dark-Grunge-Raw.mp3?rlkey=0j8oir01zrabujsqsopxzfjhq&st=30kivf1w&dl=0',
+    play: true,
+  },
+  {
+    name: 'Endurance',
+    artist: 'Dark Grunge',
+    file: 'https://dl.dropboxusercontent.com/scl/fi/0lsd8raaowbyc12c4relm/Weight-of-Stillness-Slow-Grunge-Doom-Song-About-Endurance-Dark-Grunge-Raw.mp3?rlkey=1chbnr6zf4hcwk0jpyl2pjk2k&st=u50ketv8&dl=0',
+    play: true,
+  },
+  {
+    name: 'Original',
+    artist: 'Dark Grunge',
+    file: 'https://dl.dropboxusercontent.com/scl/fi/8wt0vbhfy86rl73ii1noz/HURT-Original-Dark-Grunge-Version-Progressive-Rock-Anthem.mp3?rlkey=9gso9n0zzmk7fkjxt06k60tef&st=7xnof9bp&dl=0',
+    play: true,
+  },
+  {
+    name: 'Blue Eyes',
+    artist: 'Dark Grunge',
+    file: 'https://dl.dropboxusercontent.com/scl/fi/t47z17aooxk2pl16j6b4p/Behind-Blue-Eyes-Dark-Grunge-Progressive-Rock-Original-Version.mp3?rlkey=8s1yqmum9j9gp049vwgkhzp68&st=m7ytht7y&dl=0',
+    play: true,
+  },
+  {
+    name: 'Hurt',
+    artist: 'The Warning',
+    file: 'https://dl.dropboxusercontent.com/scl/fi/pissbozhzn1lnk1xq7yvq/Dead-Poet-Society-HURT-feat.-The-Warning.mp3?rlkey=th1n90hr84vvmyrkptcvmq6i8&st=bkjg7o6o&dl=0',
+    play: true,
+  },
   {
     name: "Blackbird",
     artist: "Lisa O'Neill",
@@ -254,7 +344,7 @@ file: 'https://dl.dropboxusercontent.com/scl/fi/n3b1eydjhhmk9ja29o1rf/I-CANT-DO-
     play: true,
   },
   {
-    name: "It’s a Mans World",
+    name: "It's a Mans World",
     artist: "Ren",
     file: "https://dl.dropboxusercontent.com/scl/fi/e78y7lei6u9is0d8lki49/Earned-it-_Mans-World-_-Falling.mp3?rlkey=2flpgxnpnl54hrno9zrlmo7py&st=izaqds3f&dl=0",
     play: true,
@@ -612,7 +702,7 @@ file: 'https://dl.dropboxusercontent.com/scl/fi/n3b1eydjhhmk9ja29o1rf/I-CANT-DO-
     play: true,
   },
   {
-    name: "It’s a Mans World",
+    name: "It's a Mans World",
     artist: "Ren",
     file: "https://dl.dropboxusercontent.com/scl/fi/e78y7lei6u9is0d8lki49/Earned-it-_Mans-World-_-Falling.mp3?rlkey=2flpgxnpnl54hrno9zrlmo7py&st=izaqds3f&dl=0",
     play: true,
