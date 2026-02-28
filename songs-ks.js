@@ -1,6 +1,12 @@
 //updated 02/26/2026
 //Kevin's Playlist
 const songsKw = [
+ {
+name:'I cant do this',
+artist: 'Dark Grunge',
+file: 'https://dl.dropboxusercontent.com/scl/fi/n3b1eydjhhmk9ja29o1rf/I-CANT-DO-THIS-ANYMORE-Enough-For-Today.mp3?rlkey=er12b5mekmnkjjo9gqzk6ffrc&st=gizbn885&dl=0',
+ play: true,
+ },
   {
     name: "Blackbird",
     artist: "Lisa O'Neill",
