@@ -201,7 +201,7 @@ const songsKw = [
   },
   {
     name: "Empty Chair",
-    artist: "",
+    artist: "Afriafri",
     file: "https://dl.dropboxusercontent.com/scl/fi/qpw64t7246s6qnkhlob6e/Empty-Chair.mp3?rlkey=ee15syr6xumbc7os2rgtkug3e&st=xaqvpm5m&dl=0",
     play: true,
   },
