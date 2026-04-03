@@ -1,6 +1,18 @@
-//updated 03/23/2026
+//updated 04/03/2026
 //Kevin's Playlist
 const songsKw = [
+  {
+    name: "Coming Undone",
+    artist: "Kelbren",
+    file: "https://dl.dropboxusercontent.com/scl/fi/w7csavqqvf54m8fsocapl/Coming-Undone.mp3?rlkey=jucpa2xrluseoazwdnbbzll62&st=c7n9js8s&dl=0",
+    play: true,
+  },
+  {
+    name: "Twist In My Sobriety",
+    artist: "Tanita Tikaram",
+    file: "https://dl.dropboxusercontent.com/scl/fi/r0ssz64okatmxjurf500p/01-Twist-In-My-Sobriety.mp3?rlkey=pngwuc6drnm0j7idi4acscw98&st=p7d8438p&dl=0",
+    play: true,
+  },
   {
     name: "Traveling Soldier",
     artist: "Cody Johnson",
@@ -15,7 +27,7 @@ const songsKw = [
   },
   {
     name: "Rock and a Hard Place",
-    artist: "Bailer Zimmerman",
+    artist: "Bailey Zimmerman",
     file: "https://dl.dropboxusercontent.com/scl/fi/s1501h3qltd641olzntnp/Bailey-Zimmerman-Rock-and-A-Hard-Place-Official-Music-Video.mp3?rlkey=wbcpmweq8l8v4y5volk2xydth&st=cwpwgv5i&dl=0",
     play: true,
   },
