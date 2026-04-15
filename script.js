@@ -1,29 +1,31 @@
 document.addEventListener("DOMContentLoaded", () => {
   const audioPlayer = document.getElementById("audioPlayer");
   const statusDisplay = document.getElementById("status");
-  statusDisplay.textContent = "Paused";
   const currentSongDisplay = document.getElementById("current-song");
-  const playerContainer = document.querySelector(".player-container");
   const playlistSelector = document.getElementById("playlist-selector");
   const playlistDisplay = document.getElementById("playlist");
+  const trackList = document.getElementById("track-list");
+  const trackCount = document.getElementById("track-count");
+  const transportButtons = document.querySelectorAll("[data-action]");
+  const songListLink = document.getElementById("songList");
+
+  statusDisplay.textContent = "Paused";
 
   let currentSongIndex = 0;
-  let currentPlaylist = songsKw; // Default to Kevin's playlist
-  let currentPlaylistType = 'local'; // 'local' or 'soundcloud'
+  let currentPlaylist = songsKw;
+  let currentPlaylistType = "local";
   let soundcloudWidget = null;
 
-  // SoundCloud playlist URLs
   const soundcloudPlaylists = {
     joanneCloud: "https://soundcloud.com/kjwagner613/sets/soundcloud-1",
     kevinCloud: "https://soundcloud.com/kjwagner613/sets/soundcloud-2"
   };
 
-  // Playlist management - declare these first
   const playlists = {
-    songsKw: songsKw,      // Kevin's Local
-    songs: songs,           // Joanne's Local
-    joanneCloud: [],       // Will be populated from SoundCloud
-    kevinCloud: []         // Will be populated from SoundCloud
+    songsKw: songsKw,
+    songs: songs,
+    joanneCloud: [],
+    kevinCloud: []
   };
 
   const playlistNames = {
@@ -33,196 +35,226 @@ document.addEventListener("DOMContentLoaded", () => {
     kevinCloud: "Kevin's SoundCloud"
   };
 
-  // Initialize playlist display
-  playlistDisplay.textContent = playlistNames.songsKw; // Set default to Kevin's
+  playlistDisplay.textContent = playlistNames.songsKw;
+  localStorage.setItem("currentPlaylistKey", "songsKw");
+  renderTrackList();
 
-  // Debug: Check if playlist selector has all options
-  setTimeout(() => {
-    const options = playlistSelector.querySelectorAll('option');
-    console.log('Playlist options found:', options.length);
-    options.forEach((option, index) => {
-      console.log(`Option ${index}: ${option.value} - ${option.textContent}`);
-    });
-  }, 1000);
-
-  // Handle playlist selection
-  playlistSelector.addEventListener('change', function () {
+  playlistSelector.addEventListener("change", function () {
     const selectedPlaylist = this.value;
     playlistDisplay.textContent = playlistNames[selectedPlaylist];
+    localStorage.setItem("currentPlaylistKey", selectedPlaylist);
 
-    if (selectedPlaylist === 'joanneCloud' || selectedPlaylist === 'kevinCloud') {
-      // Switch to SoundCloud mode
+    if (selectedPlaylist === "joanneCloud" || selectedPlaylist === "kevinCloud") {
       switchToSoundCloud(selectedPlaylist);
     } else {
-      // Switch to local mode
       switchToLocal(selectedPlaylist);
     }
+
+    renderTrackList();
   });
 
+  if (songListLink) {
+    songListLink.addEventListener("click", () => {
+      localStorage.setItem("currentPlaylistKey", playlistSelector.value);
+    });
+  }
+
+  function renderTrackList() {
+    if (!trackList || !trackCount) {
+      return;
+    }
+
+    if (currentPlaylistType === "soundcloud") {
+      trackCount.textContent = "Streaming";
+      trackList.innerHTML = `
+        <div class="track-item">
+          <div class="track-number">SC</div>
+          <div class="track-meta">
+            <strong>${playlistNames[playlistSelector.value]}</strong>
+            <span>Use the player controls to browse the SoundCloud set.</span>
+          </div>
+        </div>
+      `;
+      return;
+    }
+
+    if (!currentPlaylist.length) {
+      trackCount.textContent = "0 songs";
+      trackList.innerHTML = "";
+      return;
+    }
+
+    trackCount.textContent = `${currentPlaylist.length} song${currentPlaylist.length === 1 ? "" : "s"}`;
+    trackList.innerHTML = "";
+
+    currentPlaylist.forEach((song, index) => {
+      const item = document.createElement("button");
+      item.type = "button";
+      item.className = `track-item${index === currentSongIndex ? " is-active" : ""}`;
+      item.innerHTML = `
+        <span class="track-number">${index + 1}</span>
+        <span class="track-meta">
+          <strong>${song.name}</strong>
+          <span>${song.artist || "Unknown artist"}${song.play ? "" : " • skipped in auto-play"}</span>
+        </span>
+      `;
+      item.addEventListener("click", () => {
+        playSong(index);
+      });
+      trackList.appendChild(item);
+    });
+  }
+
   function switchToLocal(playlistKey) {
-    currentPlaylistType = 'local';
+    currentPlaylistType = "local";
     currentPlaylist = playlists[playlistKey];
     currentSongIndex = 0;
 
-    // Stop SoundCloud player if it's playing
     if (soundcloudWidget) {
       soundcloudWidget.pause();
     }
 
-    // Hide SoundCloud widget, show audio player
-    document.getElementById('soundcloud-container').style.display = 'none';
-    document.getElementById('audioPlayer').style.display = 'none';
+    document.getElementById("soundcloud-container").style.display = "none";
+    audioPlayer.style.display = "block";
 
-    // Find first playable song in playlist
     let firstPlayableIndex = 0;
-    for (let i = 0; i < currentPlaylist.length; i++) {
-      if (currentPlaylist[i].play) {
-        firstPlayableIndex = i;
+    for (let index = 0; index < currentPlaylist.length; index += 1) {
+      if (currentPlaylist[index].play) {
+        firstPlayableIndex = index;
         break;
       }
     }
 
-    // Load the first song but don't auto-play
     playSong(firstPlayableIndex, false);
-  } function switchToSoundCloud(playlistKey) {
-    currentPlaylistType = 'soundcloud';
+    renderTrackList();
+  }
+
+  function switchToSoundCloud(playlistKey) {
+    currentPlaylistType = "soundcloud";
     currentSongIndex = 0;
 
-    // Stop and pause the local audio player
-    const audioPlayer = document.getElementById('audioPlayer');
     audioPlayer.pause();
     audioPlayer.currentTime = 0;
 
-    // Hide audio player, show SoundCloud widget
-    const soundcloudContainer = document.getElementById('soundcloud-container');
+    const soundcloudContainer = document.getElementById("soundcloud-container");
+    audioPlayer.style.display = "none";
+    soundcloudContainer.style.display = "block";
 
-    audioPlayer.style.display = 'none';
-    soundcloudContainer.style.display = 'block';
-    soundcloudContainer.style.width = '100%';
-    soundcloudContainer.style.height = '166px';
-
-    // Load SoundCloud playlist
     const playlistUrl = soundcloudPlaylists[playlistKey];
     const widgetUrl = `https://w.soundcloud.com/player/?url=${encodeURIComponent(playlistUrl)}&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true`;
 
-    const iframe = document.getElementById('soundcloud-widget');
+    const iframe = document.getElementById("soundcloud-widget");
     iframe.src = widgetUrl;
 
-    // Check if SC (SoundCloud) is available
-    if (typeof SC === 'undefined') {
+    if (typeof SC === "undefined") {
       statusDisplay.textContent = "SoundCloud API Error";
       currentSongDisplay.innerHTML = "SoundCloud API not loaded";
       return;
     }
 
-    // Initialize SoundCloud widget
     soundcloudWidget = SC.Widget(iframe);
-    soundcloudWidget.bind(SC.Widget.Events.READY, function () {
+    soundcloudWidget.bind(SC.Widget.Events.READY, () => {
       updateStatusForSoundCloud();
+      renderTrackList();
     });
 
-    soundcloudWidget.bind(SC.Widget.Events.PLAY, function () {
+    soundcloudWidget.bind(SC.Widget.Events.PLAY, () => {
       updateStatusForSoundCloud("Playing");
     });
 
-    soundcloudWidget.bind(SC.Widget.Events.PAUSE, function () {
+    soundcloudWidget.bind(SC.Widget.Events.PAUSE, () => {
       updateStatusForSoundCloud("Paused");
     });
   }
 
   function updateStatusForSoundCloud(status = "Ready") {
-    if (soundcloudWidget) {
-      soundcloudWidget.getCurrentSound(function (currentSound) {
-        if (currentSound) {
-          statusDisplay.textContent = status;
-          currentSongDisplay.innerHTML = `${currentSound.title}<br>${currentSound.user.username}`;
-        } else {
-          statusDisplay.textContent = status;
-          currentSongDisplay.innerHTML = "SoundCloud Playlist";
-        }
-      });
+    if (!soundcloudWidget) {
+      return;
     }
+
+    soundcloudWidget.getCurrentSound((currentSound) => {
+      statusDisplay.textContent = status;
+      if (currentSound) {
+        currentSongDisplay.innerHTML = `${currentSound.title}<br>${currentSound.user.username}`;
+      } else {
+        currentSongDisplay.innerHTML = "SoundCloud Playlist";
+      }
+    });
   }
 
-  document.querySelectorAll('area[data-action]').forEach(area => {
-    area.addEventListener('click', function (event) {
-      event.preventDefault();
-      const action = this.getAttribute('data-action');
+  transportButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const action = button.getAttribute("data-action");
 
-      if (currentPlaylistType === 'soundcloud' && soundcloudWidget) {
-        // Handle SoundCloud controls
+      if (currentPlaylistType === "soundcloud" && soundcloudWidget) {
         switch (action) {
-          case 'prev':
+          case "prev":
             soundcloudWidget.prev();
             break;
-          case 'play':
+          case "play":
             soundcloudWidget.play();
             break;
-          case 'pause':
+          case "pause":
             soundcloudWidget.pause();
             break;
-          case 'next':
+          case "next":
             soundcloudWidget.next();
             break;
-          case 'songlist':
-            localStorage.setItem("currentPlaylistKey", playlistSelector.value);
-            window.location.href = 'songlist.html';
-            break;
-          case 'medallion':
-            alert('Medallion feature coming soon!');
-            break;
           default:
-            console.warn('Unknown action:', action);
+            break;
         }
-      } else {
-        // Handle local file controls
-        switch (action) {
-          case 'prev':
-            playPrevSong();
-            break;
-          case 'play':
-            audioPlayer.play();
-            break;
-          case 'pause':
-            audioPlayer.pause();
-            break;
-          case 'next':
-            playNextSong();
-            break;
-          case 'songlist':
-            localStorage.setItem("currentPlaylistKey", playlistSelector.value);
-            window.location.href = 'songlist.html';
-            break;
-          case 'medallion':
-            alert('Medallion feature coming soon!');
-            break;
-          default:
-            console.warn('Unknown action:', action);
-        }
+        return;
+      }
+
+      switch (action) {
+        case "prev":
+          playPrevSong();
+          break;
+        case "play":
+          audioPlayer.play();
+          break;
+        case "pause":
+          audioPlayer.pause();
+          break;
+        case "next":
+          playNextSong();
+          break;
+        default:
+          break;
       }
     });
   });
 
-
-
   function playSong(index, autoPlay = true) {
+    if (!currentPlaylist[index]) {
+      return;
+    }
+
+    currentSongIndex = index;
     audioPlayer.src = currentPlaylist[index].file;
+
     if (autoPlay) {
       audioPlayer.play().catch((error) => {
         console.error("Error playing song:", error);
       });
-      updateStatus("Playing", currentPlaylist[index].name);
+      updateStatus("Playing");
     } else {
       audioPlayer.load();
-      updateStatus("Paused", currentPlaylist[index].name);
+      updateStatus("Paused");
     }
-    currentSongIndex = index;
+
+    renderTrackList();
   }
 
-  function updateStatus(status, songName) {
+  function updateStatus(status) {
     statusDisplay.textContent = status;
     const currentSong = currentPlaylist[currentSongIndex];
-    currentSongDisplay.innerHTML = `${currentSong.name}<br>${currentSong.artist}`;
+    if (!currentSong) {
+      currentSongDisplay.innerHTML = "No song playing";
+      return;
+    }
+
+    currentSongDisplay.innerHTML = `${currentSong.name}<br>${currentSong.artist || "Unknown artist"}`;
   }
 
   audioPlayer.addEventListener("ended", () => {
@@ -230,134 +262,79 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   audioPlayer.addEventListener("play", () => {
-    updateStatus("Playing", currentPlaylist[currentSongIndex].name);
+    updateStatus("Playing");
   });
+
   audioPlayer.addEventListener("pause", () => {
-    updateStatus("Paused", currentPlaylist[currentSongIndex].name);
+    if (currentPlaylistType === "local") {
+      updateStatus("Paused");
+    }
   });
 
   function playNextSong() {
     let nextIndex = currentSongIndex;
     let found = false;
-    for (let i = 0; i < currentPlaylist.length; i++) {
+
+    for (let index = 0; index < currentPlaylist.length; index += 1) {
       nextIndex = (nextIndex + 1) % currentPlaylist.length;
       if (currentPlaylist[nextIndex].play) {
         found = true;
         break;
       }
     }
+
     if (found) {
       playSong(nextIndex);
     } else {
-      updateStatus("No songs selected to play", "");
+      statusDisplay.textContent = "No songs selected to play";
       audioPlayer.pause();
     }
   }
 
-
-
   function playPrevSong() {
     let prevIndex = currentSongIndex;
     let found = false;
-    for (let i = 0; i < currentPlaylist.length; i++) {
+
+    for (let index = 0; index < currentPlaylist.length; index += 1) {
       prevIndex = (prevIndex - 1 + currentPlaylist.length) % currentPlaylist.length;
       if (currentPlaylist[prevIndex].play) {
         found = true;
         break;
       }
     }
+
     if (found) {
       playSong(prevIndex);
     } else {
-      updateStatus("No songs selected to play", "");
+      statusDisplay.textContent = "No songs selected to play";
       audioPlayer.pause();
     }
   }
-
 
   const selectedSongIndex = localStorage.getItem("selectedSongIndex");
   const selectedPlaylistKey = localStorage.getItem("selectedPlaylistKey");
 
   if (selectedSongIndex !== null) {
-    // If a playlist was selected from song list, switch to it
     if (selectedPlaylistKey && playlists[selectedPlaylistKey]) {
-      currentPlaylist = playlists[selectedPlaylistKey];
       playlistSelector.value = selectedPlaylistKey;
       playlistDisplay.textContent = playlistNames[selectedPlaylistKey];
+      localStorage.setItem("currentPlaylistKey", selectedPlaylistKey);
+
+      if (selectedPlaylistKey === "joanneCloud" || selectedPlaylistKey === "kevinCloud") {
+        switchToSoundCloud(selectedPlaylistKey);
+      } else {
+        currentPlaylist = playlists[selectedPlaylistKey];
+        currentPlaylistType = "local";
+      }
     }
-    playSong(parseInt(selectedSongIndex));
+
+    if (currentPlaylistType === "local") {
+      playSong(parseInt(selectedSongIndex, 10));
+    }
+
     localStorage.removeItem("selectedSongIndex");
     localStorage.removeItem("selectedPlaylistKey");
   } else {
-    playSong(0);
+    playSong(0, false);
   }
-
-  // Responsive image map functionality
-  function makeImageMapResponsive() {
-    const img = document.querySelector('img[usemap="#image-map"]');
-    const map = document.querySelector('map[name="image-map"]');
-    if (!img || !map) return;
-    const areas = map.querySelectorAll('area');
-
-    if (!img || !areas.length) return;
-
-    if (!img.naturalWidth || !img.naturalHeight) return;
-
-    areas.forEach(area => {
-      if (!area.hasAttribute('data-original-coords')) {
-        area.setAttribute('data-original-coords', area.getAttribute('coords'));
-      }
-    });
-
-    const scaleX = img.clientWidth / img.naturalWidth;
-    const scaleY = img.clientHeight / img.naturalHeight;
-    const circleScale = Math.min(scaleX, scaleY);
-
-    areas.forEach(area => {
-      const originalCoords = area.getAttribute('data-original-coords').split(',').map(Number);
-      const shape = area.getAttribute('shape');
-
-      if (shape === 'circle') {
-        const newCoords = [
-          Math.round(originalCoords[0] * scaleX),
-          Math.round(originalCoords[1] * scaleY),
-          Math.round(originalCoords[2] * circleScale)
-        ];
-        area.setAttribute('coords', newCoords.join(','));
-      } else if (shape === 'rect') {
-        const newCoords = [
-          Math.round(originalCoords[0] * scaleX),
-          Math.round(originalCoords[1] * scaleY),
-          Math.round(originalCoords[2] * scaleX),
-          Math.round(originalCoords[3] * scaleY)
-        ];
-        area.setAttribute('coords', newCoords.join(','));
-      }
-    });
-  }
-
-  function syncBottomImageHeight() {
-    const playerHeadImage = document.querySelector('img[usemap="#image-map"]');
-    const bottomImage = document.getElementById('pic80s');
-    if (!playerHeadImage || !bottomImage) return;
-    if (!playerHeadImage.clientHeight) return;
-    bottomImage.style.height = `${playerHeadImage.clientHeight}px`;
-    bottomImage.style.width = 'auto';
-  }
-
-  // Call on load and resize
-  makeImageMapResponsive();
-  syncBottomImageHeight();
-  window.addEventListener('resize', makeImageMapResponsive);
-  window.addEventListener('resize', syncBottomImageHeight);
-
-  // Also call after image loads to ensure proper scaling
-  const playerImage = document.querySelector('img[usemap="#image-map"]');
-  if (playerImage) {
-    playerImage.addEventListener('load', () => {
-      makeImageMapResponsive();
-      syncBottomImageHeight();
-    });
-  }
-
 });
