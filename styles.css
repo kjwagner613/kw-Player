@@ -451,19 +451,20 @@ body {
 .art-medallion {
   display: block;
   object-fit: cover;
-  border-radius: 18px;
+  border-radius: 38px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.03);
 }
 
 .art-tile {
-  width: 102px;
-  height: 64px;
+  width: 202px;
+  height: 202px;
+  margin-right: 4rem;
 }
 
 .art-medallion {
-  width: 64px;
-  height: 64px;
+  width: 264px;
+  height: 264px;
   border-radius: 999px;
 }
 
