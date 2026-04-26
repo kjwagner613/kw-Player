@@ -67,12 +67,12 @@ const songs = [
     file: "https://dl.dropboxusercontent.com/scl/fi/twdvxtbihcdvgn9xurgfc/Say-Something-I-m-Giving-Up-On-You-Lyrics-A-Great-Big-World-Christina-Aguilera.mp3?rlkey=4h9nc7zevccpzqpldnja15sj2&st=b7kldb9u&dl=0",
     play: true,
   },
-  {
-    name: "After I'm Gone",
-    artist: "Michael Bennet",
-    file: "https://dl.dropboxusercontent.com/scl/fi/q7vgbnra1qnziwcmc0e9e/Heartbreaking-After-Im-Gone-By-MICHAEL-BENNET-Americas-Got-Talent-8-min-JER-STE-VI-HTELI.mp3?rlkey=glfdh3w4f54zid9fbwiczs9qg&st=qjp1ea41&dl=0",
-    play: true,
-  },
+  // {
+  //   name: "After I'm Gone",
+  //   artist: "Michael Bennet",
+  //   file: "https://dl.dropboxusercontent.com/scl/fi/q7vgbnra1qnziwcmc0e9e/Heartbreaking-After-Im-Gone-By-MICHAEL-BENNET-Americas-Got-Talent-8-min-JER-STE-VI-HTELI.mp3?rlkey=glfdh3w4f54zid9fbwiczs9qg&st=qjp1ea41&dl=0",
+  //   play: true,
+  // },
   {
     name: "Tomorrow For Us",
     artist: "Jelly Roll, Rihana and Eminem",
